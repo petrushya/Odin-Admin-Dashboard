@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400..700&display=swap');
 
 *{
   margin: 0;
+}
+body{
+  background-color: #dcdcdc;
+  font-family: Asap, sans-serif;
 }
 ol{
   list-style: none;
@@ -15,6 +20,12 @@ h1, h2, h3, h4, p{
   text-transform: capitalize;
   font-weight: 600;
 }
+p{
+  font-weight: 500;
+}
+button, .button{
+  caret-color: transparent;
+}
 .wrapper{
   --page-gap:1.5vi;
   min-block-size: 100vb;
@@ -27,38 +38,75 @@ h1, h2, h3, h4, p{
 }
 .right-wrapper{
   grid-column: 2/3;
-  padding: var(--page-gap);
-  background-color: #fff;
 }
 header{
   display: grid;
   grid-template-columns: 5fr 3fr;
   row-gap: var(--page-gap);
+  background: linear-gradient(#fff 97%, #dcdcdc 97%, #dcdcdc00);
+  padding: var(--page-gap) var(--page-gap) calc(var(--page-gap) + 0.25rem) var(--page-gap);
 }
-form{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+form, .greetings{
+  display: grid;
+  grid-template-columns: 1fr 10fr;
   align-items: center;
 }
 form button{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: right;
+  padding: 0 0.15lh;
   border-radius: 0.6lh;
   border: none;
   background: none;
   font-size: 1.5rem;
+  text-align: right;
+  margin-right: 0.5vi;
 }
 input{
-  margin: 0 0.5vi;
-  inline-size: 80%;
+  grid-column: 2/3;
+  inline-size: 90%;
   padding: 0.25rem 0.5rem;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.75lh;
   background-color: #f5f5f5;
+}
+.inform{
+  display: grid;
+  grid-template-columns: 1fr 2fr 8fr;
+  justify-self: center;
+  align-items: center;
+  column-gap: var(--page-gap);
+  font-size: 1.125rem;
+}
+.greetings{
+  font-size: 1.125rem;
+}
+.greetings img{
+  margin-right: 0.25rem;
 }
 .greetings span{
   font-weight: normal;
   font-size: 0.9rem;
   text-transform: none;
+}
+.admin-nav{
+  align-self: center;
+  justify-self: center;
+  font-size: 1.125rem;
+}
+.admin-nav ol{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: var(--page-gap);
+}
+.button a{
+  display: block;
+  inline-size: max(8ch, 7vi);
+  padding: 0.5rem 0;
+  border-radius: 1lh;
+  background-color: #00f;
+  text-align: center;
 }
 .content-wrapper{
   display: grid;
