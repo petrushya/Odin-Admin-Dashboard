@@ -20,26 +20,28 @@ h1, h2, h3, h4, p{
   text-transform: capitalize;
   font-weight: 600;
 }
+h1, h2{
+  font-size: 2rem;
+}
 p{
   font-weight: 500;
+}
+.content-wrapper p{
+  font-weight: 400;
 }
 button, .button{
   caret-color: transparent;
 }
 .wrapper{
-  --page-gap:1.5vi;
-  min-block-size: 100vb;
+  --page-gap: 1.5vi;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
   background-color: #f5f5f5;
   max-inline-size: 90vi;
   margin: 0 auto;
 }
-.right-wrapper{
-  grid-column: 2/3;
-}
 header{
+  grid-column: 2/3;
   display: grid;
   grid-template-columns: 5fr 3fr;
   row-gap: var(--page-gap);
@@ -48,24 +50,22 @@ header{
 }
 form, .greetings{
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: 1fr 15fr;
   align-items: center;
 }
 form button{
   grid-column: 1/2;
   grid-row: 1/2;
   justify-self: right;
-  padding: 0 0.15lh;
   border-radius: 0.6lh;
   border: none;
   background: none;
   font-size: 1.5rem;
   text-align: right;
-  margin-right: 0.5vi;
 }
 input{
   grid-column: 2/3;
-  inline-size: 90%;
+  inline-size: 93%;
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 0.75lh;
@@ -86,7 +86,7 @@ input{
   margin-right: 0.25rem;
 }
 .greetings span{
-  font-weight: normal;
+  font-weight: 400;
   font-size: 0.9rem;
   text-transform: none;
 }
@@ -108,14 +108,22 @@ input{
   background-color: #00f;
   text-align: center;
 }
-.content-wrapper{
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-}
 #main-nav{
-  grid-column: 1/2;
-  grid-row: 1/2;
+  grid-row: 1/3;
   background-color: #00f;
   padding: var(--page-gap);
+}
+#main-nav p{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+.content-wrapper{
+  min-block-size: 50vb;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
