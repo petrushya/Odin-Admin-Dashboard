@@ -13,15 +13,23 @@ ol{
 }
 a{
   text-decoration: none;
+  text-transform: capitalize;
   font-weight: 700;
   color: #fff;
 }
-h1, h2, h3, h4, p{
+h1, h2, h3, h4{
   text-transform: capitalize;
   font-weight: 600;
 }
 h1, h2{
   font-size: 2rem;
+}
+
+h3{
+  font-size: 1.75rem;
+}
+h4{
+  font-size: 1.5rem;
 }
 p{
   font-weight: 500;
@@ -31,7 +39,15 @@ p{
 }
 button, .button{
   caret-color: transparent;
+  cursor: pointer;
 }
+.inform, .greetings, .admin-nav, a{
+  font-size: 1.25rem;
+}
+svg{
+  inline-size: 1.25rem;
+}
+/*--------*/
 .wrapper{
   --page-gap: 1.5vi;
   display: grid;
@@ -45,22 +61,24 @@ header{
   display: grid;
   grid-template-columns: 5fr 3fr;
   row-gap: var(--page-gap);
-  background: linear-gradient(#fff 97%, #dcdcdc 97%, #dcdcdc00);
   padding: var(--page-gap) var(--page-gap) calc(var(--page-gap) + 0.25rem) var(--page-gap);
+  background: linear-gradient(#fff 97%, #dcdcdc 97%, #dcdcdc00);
 }
 form, .greetings{
   display: grid;
-  grid-template-columns: 1fr 15fr;
+  grid-template-columns: 1fr 14fr;
+  justify-content: start;
   align-items: center;
 }
-form button{
+form button, .inform button{
   grid-column: 1/2;
   grid-row: 1/2;
-  justify-self: right;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.6lh;
   border: none;
   background: none;
-  font-size: 1.5rem;
 }
 input{
   grid-column: 2/3;
@@ -70,22 +88,19 @@ input{
   border-radius: 0.75lh;
   background-color: #f5f5f5;
 }
-.inform, .greetings, .admin-nav{
-  font-size: 1.125rem;
-}
 .inform{
   display: grid;
-  grid-template-columns: 1fr 2fr 8fr;
+  grid-template-columns: 1fr 1fr 4fr;
   justify-self: center;
   align-items: center;
   column-gap: var(--page-gap);
 }
 .greetings img{
-  margin-right: 0.25rem;
+  margin: 0 var(--page-gap);
 }
 .greetings span{
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-transform: none;
 }
 .admin-nav{
@@ -105,21 +120,37 @@ input{
   background-color: #00f;
   text-align: center;
 }
-#main-nav{
+/*-----------*/
+.main-nav{
   grid-row: 1/3;
   background-color: #00f;
   padding: var(--page-gap);
 }
-#main-nav p{
+.main-nav p{
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   align-items: center;
   font-size: 2.15rem;
   font-weight: 700;
   color: #fff;
 }
+.main-nav p svg{
+  inline-size: 3rem;
+  margin-inline-end: 0.5vi;
+}
+#main-nav ol{
+  display: grid;
+  row-gap: var(--page-gap);
+  margin-top: 6vi;
+}
+#main-nav a{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+}
+/*--------*/
 .content-wrapper{
-  min-block-size: 50vb;
+  min-block-size: 70vb;
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
