@@ -27,6 +27,7 @@ h1, h2{
 
 h3{
   font-size: 1.75rem;
+  margin: 0.5rem 0 0.25rem;
 }
 h4{
   font-size: 1.5rem;
@@ -141,7 +142,7 @@ input{
 #main-nav ol{
   display: grid;
   row-gap: var(--page-gap);
-  margin-top: 6vi;
+  margin-block-start: 6vi;
 }
 #main-nav a{
   display: grid;
@@ -150,8 +151,33 @@ input{
 }
 /*--------*/
 .content-wrapper{
-  min-block-size: 70vb;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  column-gap: var(--page-gap);
+  padding: calc(2 * var(--page-gap)) var(--page-gap);
+}
+.content-wrapper ol{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+  gap: var(--page-gap);
+  margin: var(--page-gap) 0;
+}
+.card{
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: var(--page-gap) var(--page-gap) var(--page-gap) calc(2 * var(--page-gap));
+  display: grid;
+  row-gap: var(--page-gap);
+  box-shadow: 3px 3px 5px #dcdcdc;
+}
+.color{
+  background: linear-gradient(to right, goldenrod 1rem, #fff 1rem, #fff);
+}
+.small{
+  justify-self: end;
+  align-self: end;
+  display: grid;
+  grid-template-columns: repeat(3,32px);
+  column-gap: var(--page-gap);
 }
 
