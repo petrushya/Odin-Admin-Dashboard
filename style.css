@@ -1,49 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400..700&display=swap');
 
+:root{
+  --lightest: #faffff;
+  --lighter: #ecfdf5;
+  --light: #a7f3d0;
+  --mid: #10b981;
+  --middle: #047857;
+  --darkest: #022c22;
+}
 *{
   margin: 0;
+  outline-color: var(--lighter);
 }
 body{
   background-color: #dcdcdc;
   font-family: Asap, sans-serif;
+  color: var(--darkest);
 }
 ol{
+  display: grid;
+  gap: var(--page-gap);
   list-style: none;
   padding: 0;
 }
 a{
+  display: grid;
   text-decoration: none;
   text-transform: capitalize;
   font-weight: 700;
-  color: #fff;
-}
-h1, h2, h3, h4{
-  text-transform: capitalize;
-  font-weight: 600;
+  color: var(--lightest);
 }
 h1, h2{
-  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 2.25rem;
+  padding: var(--page-gap) 0;
 }
 
 h3{
   font-size: 1.75rem;
-  margin: 0.5rem 0 0.25rem;
 }
-h4{
-  font-size: 1.5rem;
+h5{
+  font-size: 1.25rem;
 }
 p{
-  font-weight: 500;
-}
-.content-wrapper p{
   font-weight: 400;
+}
+p span{
+  text-transform: none;
+}
+hr{
+  opacity: 0.25;
 }
 button, .button{
   caret-color: transparent;
   cursor: pointer;
 }
-.inform, .greetings, .admin-nav, a{
-  font-size: 1.25rem;
+.inform, .admin-nav, a{
+  font-size: 1.5rem;
 }
 svg{
   inline-size: 1.25rem;
@@ -53,7 +67,7 @@ svg{
   --page-gap: 1.5vi;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  background-color: #f5f5f5;
+  background-color: var(--lighter);
   max-inline-size: 90vi;
   margin: 0 auto;
 }
@@ -62,8 +76,12 @@ header{
   display: grid;
   grid-template-columns: 5fr 3fr;
   row-gap: var(--page-gap);
-  padding: var(--page-gap) var(--page-gap) calc(var(--page-gap) + 0.25rem) var(--page-gap);
-  background: linear-gradient(#fff 97%, #dcdcdc 97%, #dcdcdc00);
+  padding: var(--page-gap) var(--page-gap) calc(var(--page-gap) + 0.25rem);
+  background: linear-gradient(var(--lightest) 97%, var(--light) 97%, var(--lighter));
+}
+header p{
+  font-weight: 600;
+  text-transform: capitalize;
 }
 form, .greetings{
   display: grid;
@@ -87,7 +105,7 @@ input{
   padding: 0.25rem 0.5rem;
   border: none;
   border-radius: 0.75lh;
-  background-color: #f5f5f5;
+  background-color: var(--lighter);
 }
 .inform{
   display: grid;
@@ -96,56 +114,50 @@ input{
   align-items: center;
   column-gap: var(--page-gap);
 }
+.greetings{
+  font-size: 1.75rem;
+}
 .greetings img{
   margin: 0 var(--page-gap);
 }
-.greetings span{
-  font-weight: 400;
-  font-size: 1rem;
-  text-transform: none;
+.greetings span:first-child{
+  font-size: 1.125rem;
 }
 .admin-nav{
   align-self: center;
   justify-self: center;
 }
 .admin-nav ol{
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: var(--page-gap);
 }
 .button a{
-  display: block;
   inline-size: max(8ch, 7vi);
-  padding: 0.5rem 0;
+  padding: 0.4rem 0 0.6rem;
   border-radius: 1lh;
-  background-color: #00f;
-  text-align: center;
+  background-color: var(--middle);
+  justify-content: center;
 }
 /*-----------*/
 .main-nav{
   grid-row: 1/3;
-  background-color: #00f;
+  background-color: var(--middle);
   padding: var(--page-gap);
 }
 .main-nav p{
   display: grid;
   grid-template-columns: 1fr 4fr;
   align-items: center;
-  font-size: 2.15rem;
+  font-size: 2.125rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--lightest);
 }
-.main-nav p svg{
-  inline-size: 3rem;
+.main-nav p img{
   margin-inline-end: 0.5vi;
 }
 #main-nav ol{
-  display: grid;
-  row-gap: var(--page-gap);
   margin-block-start: 6vi;
 }
 #main-nav a{
-  display: grid;
   grid-template-columns: 1fr 4fr;
   align-items: center;
 }
@@ -154,30 +166,56 @@ input{
   display: grid;
   grid-template-columns: 3fr 1fr;
   column-gap: var(--page-gap);
-  padding: calc(2 * var(--page-gap)) var(--page-gap);
+  padding: var(--page-gap) var(--page-gap) calc(2 * var(--page-gap));
 }
-.content-wrapper ol{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
-  gap: var(--page-gap);
-  margin: var(--page-gap) 0;
+.content-wrapper a{
+  font-size: inherit;
+  color: inherit;
+}
+.content-wrapper a:hover{
+  text-decoration: underline;
+}
+main ol{
+  grid-template-columns: repeat(auto-fit, minmax(37ch, 1fr));
 }
 .card{
-  background-color: #fff;
+  background-color: var(--lightest);
   border-radius: 1rem;
-  padding: var(--page-gap) var(--page-gap) var(--page-gap) calc(2 * var(--page-gap));
+  padding: var(--page-gap);
   display: grid;
   row-gap: var(--page-gap);
-  box-shadow: 3px 3px 5px #dcdcdc;
+  box-shadow: 3px 3px 5px var(--light);
 }
 .color{
-  background: linear-gradient(to right, goldenrod 1rem, #fff 1rem, #fff);
+  background: linear-gradient(to right, var(--mid) 1rem, var(--lightest) 1rem, var(--lightest));
+  font-size: 1.125rem;
+  padding-inline-start: calc(1rem + var(--page-gap));
+  min-block-size: 200px;
 }
-.small{
+.card p{
+  padding-block-start: 0.25rem;
+}
+.action{
   justify-self: end;
   align-self: end;
   display: grid;
-  grid-template-columns: repeat(3,32px);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: var(--page-gap);
 }
-
+/*--------*/
+.member{
+  font-size: 1rem;
+}
+.member a{
+  grid-template-columns: 2fr 5fr;
+  align-items: center;
+}
+.member p{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding-block-start: 0;
+  row-gap: 0.25rem;
+}
+.member span{
+  font-weight: 600;
+}
