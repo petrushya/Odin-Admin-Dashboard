@@ -68,7 +68,7 @@ svg{
   display: grid;
   grid-template-columns: 1fr 4fr;
   background-color: var(--lighter);
-  max-inline-size: 90vi;
+  inline-size: clamp(960px, 80vi, 100vi);
   margin: 0 auto;
 }
 header{
@@ -176,7 +176,7 @@ input{
   text-decoration: underline;
 }
 main ol{
-  grid-template-columns: repeat(auto-fit, minmax(37ch, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .card{
   background-color: var(--lightest);
